@@ -1,0 +1,522 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navLink a {
+    @apply relative;
+  }
+
+  .navLink a::after {
+    content: "";
+    @apply absolute left-0 bottom-0 w-0 bg-offWhite;
+    height: 1.5px;
+    transition: width 0.5s ease;
+  }
+
+  .navLink a:hover::after {
+    @apply w-full;
+  }
+
+  .navLink button {
+    @apply lg:flex hidden text-offWhite py-2 px-10 bg-primaryButton rounded transition-colors duration-300 ease-in-out;
+  }
+
+  .navLink button:hover {
+    @apply bg-softBlue text-offWhite;
+  }
+
+  .inputWrapper input:focus {
+    @apply outline-lightOrange transition-all duration-150 ease-in-out;
+  }
+
+  .arrowIcon {
+    @apply absolute right-0 transition-transform duration-300 ease-in-out;
+  }
+
+  .inputWrapper:hover .arrowIcon {
+    @apply translate-x-1;
+  }
+
+  .heroIB button {
+    @apply text-offWhite text-18 py-2 px-10 bg-softBlue rounded transition-colors duration-300 ease-in-out;
+  }
+
+  .heroIB button:hover {
+    @apply bg-primaryButton text-offWhite;
+  }
+
+  .chatsLearnMore a:hover {
+    @apply text-lightOrange transition-colors duration-300 ease-in-out;
+  }
+
+  .chatsLearnMore:hover img {
+    @apply translate-x-2 transition-transform duration-300 ease-in-out;
+  }
+
+  .navLinkFooter a {
+    @apply text-offWhite transition-colors duration-300 ease-in-out;
+  }
+
+  .navLinkFooter a:hover {
+    @apply text-lightOrange;
+  }
+
+  .emailInputWrapper input:focus {
+    @apply outline-lightOrange transition-all duration-150 ease-in-out;
+  }
+
+  .emailArrow {
+    @apply absolute right-0 pr-4 transition-transform duration-300 ease-in-out;
+  }
+
+  .emailInputWrapper:hover .emailArrow {
+    @apply translate-x-2;
+  }
+}
+
+html,
+body {
+  @apply font-ffp bg-offWhite;
+}
+
+.containerAndBg {
+  @apply xl:px-28 md:px-12 px-6;
+  background: url("../../assets/heroImage.png") top right no-repeat;
+  background-size: cover;
+}
+
+.navWrapper {
+  @apply flex justify-between items-center pt-10;
+}
+
+.navLink {
+  @apply lg:flex hidden  items-center gap-12;
+}
+
+.navLinkActive {
+  @apply fixed top-0 right-0 flex flex-col justify-center items-center gap-4 px-24 text-18 bg-softBlue h-screen z-40;
+}
+
+.navLink a {
+  @apply flex flex-row gap-8 text-offWhite underline-offset-1;
+}
+
+.navLink button {
+  @apply lg:flex hidden text-offWhite py-2 px-10 bg-primaryButton rounded;
+}
+
+.hamburgerButton {
+  @apply right-0 lg:hidden block z-50;
+}
+
+.active {
+  @apply fixed pr-8;
+}
+
+/* Main */
+
+main {
+  @apply flex flex-col justify-center h-screen;
+}
+
+.heroText {
+  @apply flex flex-col gap-4 text-offWhite;
+}
+
+.heroText h1 {
+  @apply font-bold 590:text-50 text-34 590:leading-64 leading-42 md:max-w-17 max-w-16;
+}
+
+.heroText p {
+  @apply text-18 md:max-w-36 590:max-w-49 max-w-28;
+}
+
+.heroIB {
+  @apply flex 590:flex-row flex-col 590:gap-3 gap-4 mt-12;
+}
+
+.inputWrapper {
+  @apply relative flex items-center;
+}
+
+.inputWrapper input {
+  @apply py-3 pl-3 pr-24 w-full rounded;
+}
+
+.inputWrapper input::placeholder {
+  @apply text-desaturatedBlue text-14;
+}
+
+.arrowIcon {
+  @apply absolute right-0 -translate-x-4;
+}
+
+.heroIB button {
+  @apply text-offWhite text-18 py-2 px-10 bg-softBlue rounded;
+}
+
+/* Section 1 */
+
+.section1 {
+  @apply 1150:flex items-center 1150:mt-20 855:mt-28 mt-24;
+}
+
+.section1ContainerChats {
+  @apply xl:pl-28 md:pl-12 pl-6 1150:pr-4 pr-0;
+}
+
+.section1Wrapper {
+  @apply 1150:flex grid 855:gap-y-12 gap-y-4 items-center;
+}
+
+.section1Text {
+  @apply flex flex-col gap-6 1150:pr-0 pr-4 1150:mb-0 mb-20;
+  grid-area: 2 / 1 / 3 / 1;
+}
+
+.section1Text h2 {
+  @apply font-bold text-darkBlue 426:text-50 text-34 426:leading-64 leading-42 max-w-19;
+}
+
+.section1Text p {
+  @apply text-darkBlue text-18 855:max-w-42 426:max-w-58 max-w-26;
+}
+
+.chatsLearnMore {
+  @apply flex items-center gap-4 mt-8;
+}
+
+.chatsLearnMore a {
+  @apply text-softBlue mt-2;
+}
+
+.section1Mockup {
+  @apply flex justify-end;
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+/* Section 2 */
+
+.section2 {
+  @apply 1150:flex items-center 724:mt-24 mt-20;
+}
+
+.section2ContainerChats {
+  @apply xl:pl-28 lg:pl-12 pl-0 pr-6;
+}
+
+.section2Wrapper {
+  @apply flex 724:flex-row flex-col justify-between 1150:items-center 1150:gap-28 1066:gap-13p lg:gap-8p 892:gap-20p 834:gap-14p 800:gap-10p 774:gap-7p 724:gap-3.5p gap-16;
+}
+
+.mockupWrapper {
+  @apply relative;
+}
+
+.calender {
+  @apply absolute top-0 right-0 lg:mt-6 mt-5 lg:mr-6 mr-4 w-160;
+}
+
+@media (min-width: 376px) {
+  .calender {
+    width: unset;
+  }
+}
+
+.mockup2Img {
+  @apply relative lg:w-565 426:w-397 375:w-352 w-296 1150:h-565 724:h-462 421:h-397 375:h-351 h-296 724:bg-cover;
+  background: url("../../assets/a.png") no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 724px) {
+  .mockup2Img {
+    background-size: cover;
+  }
+}
+
+.section2Text {
+  @apply flex flex-col gap-6 1150:mb-0 mb-20 md:pr-12 pr-6 724:pl-0 pl-6;
+}
+
+.section2Text h2 {
+  @apply font-bold text-darkBlue 1066:text-50 text-34 1066:leading-64 leading-42 1150:max-w-19 724:max-w-10 max-w-11;
+}
+
+.section2Text p {
+  @apply text-darkBlue text-18 1150:max-w-42 724:max-w-24 max-w-30;
+}
+
+/* Section 3 */
+
+.section3 {
+  @apply 1150:flex items-center 1150:mt-28 mt-8;
+}
+
+.section3ContainerChats {
+  @apply xl:px-28 md:pl-12 724:pl-6 pl-0 lg:pr-12 pr-0;
+}
+
+.section3Wrapper {
+  @apply flex 724:flex-row flex-col-reverse justify-between 1150:items-center 1150:gap-28 724M:gap-20;
+}
+
+.section3Text {
+  @apply flex flex-col gap-6 1150:mb-0 mb-20 724:pl-0 pl-6;
+}
+
+.section3Text h2 {
+  @apply font-bold text-darkBlue 1066:text-50 text-34 1066:leading-64 leading-42 1150:max-w-18 724:max-w-10 max-w-11;
+}
+
+.section3Text p {
+  @apply text-darkBlue text-18 1066:max-w-42 724:max-w-25 max-w-30;
+}
+
+.mockup3Img {
+  @apply relative lg:w-565 421:w-397 375:w-352 w-296 1150:h-565 724:h-462 421:h-397 375:h-351 h-296;
+  background: url("../../assets/section3Hero.png") no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 1024px) {
+  .mockup3Img {
+    background-size: cover;
+  }
+}
+
+.section3SmallImg1 {
+  @apply absolute top-0 right-0 lg:mt-6 mt-5 lg:mr-6 mr-4 w-160;
+}
+
+.section3SmallImg2 {
+  @apply absolute top-0 right-0 375:mt-7.5 mt-6.5 lg:mr-6 mr-4 mb-6 w-160;
+}
+
+@media (min-width: 1150px) {
+  .section3SmallImg1 {
+    @apply bottom-0 mb-13.5;
+    top: unset;
+    width: unset;
+  }
+
+  .section3SmallImg2 {
+    @apply bottom-0;
+    top: unset;
+    width: unset;
+  }
+}
+
+@media (min-width: 375px) {
+  .section3SmallImg1 {
+    top: unset;
+    width: unset;
+  }
+
+  .section3SmallImg2 {
+    top: unset;
+    width: unset;
+  }
+}
+
+/* Section 4 */
+
+.section4 {
+  @apply 1150:flex items-center 1150:mt-28 mt-8 mb-20;
+}
+
+.section4Wrapper {
+  @apply flex 724:flex-row flex-col justify-between 1150:items-center 1150:gap-28 1066:gap-13p lg:gap-8p 892:gap-20p 834:gap-14p 800:gap-10p 774:gap-7p 724:gap-3.5p gap-16;
+}
+
+.mockup4Img {
+  @apply relative lg:w-565 421:w-397 375:w-352 w-296 1150:h-565 724:h-462 421:h-397 375:h-351 h-296;
+  background: url("../../assets/section4Hero.png") no-repeat;
+  background-size: contain;
+}
+
+.section4SmallImg1 {
+  @apply absolute bottom-0 lg:ml-6 ml-4 lg:mb-7.5 724:mb-11.5 376:mb-7.5 mb-6.5 w-160;
+}
+
+.section4SmallImg2 {
+  @apply absolute bottom-0 lg:ml-6 ml-4 lg:mb-6 724:mb-20 mb-4 w-160;
+}
+
+@media (min-width: 376px) {
+  .section4SmallImg1 {
+    width: unset;
+  }
+
+  .section4SmallImg2 {
+    width: unset;
+  }
+}
+
+.section4Text {
+  @apply flex flex-col gap-6 1150:mb-0 mb-20 724:pl-0 pl-6;
+}
+
+.section4Text h2 {
+  @apply font-bold text-darkBlue 1066:text-50 text-34 1066:leading-64 leading-42 1150:max-w-18 724:max-w-10 max-w-14;
+}
+
+.section4Text p {
+  @apply text-darkBlue text-18 1066:max-w-42 724:max-w-25 max-w-32;
+}
+
+/* Carousel */
+
+.carousel {
+  @apply relative w-full mb-20;
+}
+
+.carousel h2 {
+  @apply font-bold text-darkBlue 1066:text-50 text-34 text-center px-6 md:max-w-24 max-w-22 mx-auto 1066:leading-64 leading-42;
+}
+
+.carousel-wrapper {
+  @apply flex mt-20 overflow-hidden 769:pl-40 pl-2;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  @apply flex;
+  width: calc(100% + 0rem);
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  @apply pl-2  376:pr-4 pr-5;
+  flex: 0 0 calc(100% / 3.5);
+}
+
+.card {
+  @apply flex flex-col gap-6 px-8 py-8 bg-white md:w-336 w-260 shadow-cardShadow;
+}
+
+.card p {
+  @apply md:max-w-28 max-w-18;
+}
+
+.infoPerson {
+  @apply flex items-center gap-3;
+}
+
+.infoPerson h3 {
+  @apply text-darkBlue text-2xl max-w-14 leading-34;
+}
+
+.infoPerson p {
+  @apply text-desaturatedBlue text-14;
+}
+
+.arrowWrapper {
+  @apply absolute -bottom-20 md:right-0 768M:left-0 flex items-center gap-8 md:pr-48 pl-48;
+}
+
+.prev-button,
+.next-button {
+  @apply text-softBlue;
+}
+
+/* Hover effect */
+.prev-button:hover,
+.next-button:hover {
+  transform: scale(1.2) rotate(10deg);
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  50% {
+    transform: scale(1.25) rotate(-10deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(10deg);
+  }
+}
+
+/* Footer */
+
+.footerWrapperParent {
+  @apply text-offWhite bg-darkBlue xl:px-28 md:px-12 px-6 pt-5.5 pb-12 mt-52;
+}
+
+.footerWrapper {
+  @apply flex 1096:flex-row flex-col 1130:gap-24 1096:gap-16 gap-12;
+}
+
+.logoWrapper {
+  @apply flex flex-col items-start 1096:gap-4 gap-6;
+}
+
+.logoWrapper p {
+  @apply text-14 max-w-20;
+}
+
+.navFooter {
+  @apply 574:flex grid 574:flex-row flex-col 963:flex-nowrap flex-wrap 963:gap-16 gap-12 mt-2;
+}
+
+.navLinkFooter {
+  @apply 574:flex grid flex-col gap-4;
+}
+
+.navLinkFooter h3 {
+  @apply text-softBlue text-2xl leading-30;
+}
+
+.navLinkFooter p {
+  @apply text-14;
+}
+
+.navLinkFooterEmail {
+  @apply 574:flex grid flex-col gap-4;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.navLinkFooterEmail h3 {
+  @apply text-softBlue text-2xl leading-30;
+}
+
+.navLinkFooterEmail p {
+  @apply text-14;
+}
+
+.emailInputWrapperParent {
+  @apply flex flex-col gap-2;
+}
+
+.emailInputWrapper {
+  @apply relative flex items-center;
+}
+
+.emailInputWrapper input {
+  @apply px-6 py-2 bg-secondaryButton rounded;
+}
+
+.emailInputWrapper input::placeholder {
+  @apply text-offWhite text-14;
+}
+
+.emailArrow {
+  @apply 574:absolute right-0 pr-4 574:-translate-x-0 -translate-x-9;
+}
+
+.copyRight {
+  @apply mt-40;
+}
+
+/* Base styles */
+.prev-button,
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
